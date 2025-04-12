@@ -1,40 +1,37 @@
-import Link from 'next/link'
+import Link from "next/link";
 
 const navItems = {
-  '/': {
-    name: 'home',
+  "/": {
+    name: "home",
   },
-  '/blog': {
-    name: 'blog',
+  "/blog": {
+    name: "blog",
   },
-  'https://vercel.com/templates/next.js/portfolio-starter-kit': {
-    name: 'deploy',
+  "https://vercel.com/templates/next.js/portfolio-starter-kit": {
+    name: "deploy",
   },
-}
+};
 
 export function Navbar() {
   return (
-    <aside className="-ml-[8px] mb-16 tracking-tight">
-      <div className="lg:sticky lg:top-20">
-        <nav
-          className="flex flex-row items-start relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
-          id="nav"
-        >
-          <div className="flex flex-row space-x-0 pr-10">
-            {Object.entries(navItems).map(([path, { name }]) => {
-              return (
-                <Link
-                  key={path}
-                  href={path}
-                  className="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2 m-1"
-                >
-                  {name}
-                </Link>
-              )
-            })}
-          </div>
-        </nav>
+    <nav className="w-full mb-10">
+      <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+        <Link href="/" className="text-lg font-semibold text-gray-900">
+          Kalin Patel
+        </Link>
+
+        <div className="hidden sm:flex space-x-6 text-sm font-medium text-gray-700">
+          <Link href="https://github.com/kalinpatel" target="_blank" className="hover:text-black">
+            GitHub
+          </Link>
+          <Link href="https://www.linkedin.com/in/kalinbpatel/" target="_blank" className="hover:text-black">
+            LinkedIn
+          </Link>
+          <Link href="mailto:hello@kalinpatel.me" className="hover:text-black">
+            Email
+          </Link>
+        </div>
       </div>
-    </aside>
-  )
+    </nav>
+  );
 }
