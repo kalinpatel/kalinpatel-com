@@ -155,3 +155,10 @@ table {
   /* make cursor https://www.google.com/s2/favicons?domain=illinois.edu */
   cursor: url("https://www.google.com/s2/favicons?domain=illinois.edu"), auto;
 }
+
+@media (max-width: 768px) {
+  .kesem-bg {
+    background-image: none !important;
+    background-color: #01374b !important;
+  }
+}

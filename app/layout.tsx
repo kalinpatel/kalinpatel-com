@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
     default: "Kalin Patel",
-    template: "%s | Kalin Patel",
+    template: "%s – Kalin Patel",
   },
   icons: {
     icon: "/favicon.png",

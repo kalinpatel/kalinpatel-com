@@ -1,7 +1,8 @@
-import { kesemConfig } from "config";
+import { kesemConfig } from "kesem-config";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import Footer from "./components/footer";
 import { TableOfContents } from "./components/tableOfContents";
+import { Navbar } from "./components/nav";
 
 export default function Page() {
   return (
@@ -13,7 +14,7 @@ export default function Page() {
             style={{
               background: `radial-gradient(
               circle at 90% 10%, 
-              #4F39F6, 
+              var(--color-indigo-500), 
               #ffffff 50%,
               #ffffff 100%
               )`,
@@ -47,7 +48,7 @@ export default function Page() {
                   <h1 className="text-6xl font-bold">Kalin Patel</h1>
                   <p className="mt-1 text-3xl font-bold">
                     CS at
-                    <span className="hover:bg-[#13294C] hover:text-[#FE5F03] px-2 font-bold transition duration-300 ease-in-out transform hover:scale-105 block-i-cursor">
+                    <span className="hover:bg-[#13294C] hover:text-[#FE5F03] px-2 font-bold transition duration-100 ease-in-out transform hover:scale-105 block-i-cursor">
                       Illinois
                     </span>
                   </p>
@@ -85,12 +86,13 @@ export default function Page() {
             {/* Right Section */}
             <div className="lg:w-3/5 lg:pl-8 mt-16 lg:mt-0">
               {kesemConfig.showKesemBanner && (
-                <div className="bg-white border-l-4 border-indigo-500 p-6 mb-10 shadow-lg rounded-lg">
-                  <h3 className="text-2xl font-bold mb-2">Kesem</h3>
+                <div className="bg-white-100 border-b-4 border-indigo-900 pb-5 mb-10 ">
+                  <h3 className="text-2xl font-bold mb-2">Support Kesem at Illinois with me</h3>
                   <p className="text-md text-gray-700 mb-4">
-                    I am a proud member of Kesem, an organization dedicated to supporting children impacted by a
-                    parent's cancer. Through fundraising and community outreach, we strive to make a meaningful
-                    difference in their lives.
+                    Kesem is a national organization that provides a free week of summer camp for children affected by a
+                    parent's cancer. As a coordinator and counselor at Kesem at University of Illinois, I'm fundraising
+                    to reach my goal of $5,000 to send 10 campers to camp this summer.{" "}
+                    <span className="text-indigo-900 font-bold">Join me in supporting this cause!</span>
                   </p>
                   <a
                     href="/guac"
@@ -104,7 +106,7 @@ export default function Page() {
               )}
               <div className="mb-10" id="education">
                 <h2 className="text-3xl font-bold mb-2">Education</h2>
-                <div>
+                <div className="block-i-cursor">
                   <h3 className="font-semibold text-lg">University of Illinois Urbana–Champaign</h3>
                   <p className="text-sm text-gray-600">B.S. Computer Science, Minor in Business</p>
                   <p className="text-sm text-gray-600">2024–2028</p>
