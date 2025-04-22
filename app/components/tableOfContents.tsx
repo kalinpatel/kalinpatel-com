@@ -41,7 +41,7 @@ export function TableOfContents() {
       }
 
       setActive(current);
-      setProgress((index + 1) / sections.length);
+      setProgress(current ? (index + 1) / sections.length : 0);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
