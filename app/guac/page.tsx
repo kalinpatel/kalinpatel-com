@@ -1,12 +1,13 @@
-import Donors, { DonorsSkeleton } from "app/components/donors";
 import Footer from "app/components/footer";
-import Fundraiser, { FundraiserSkeleton } from "app/components/fundraiser";
 import { Navbar } from "app/components/nav";
+import { kesemConfig } from "app/config/kesem-config";
+import Donors, { DonorsSkeleton } from "app/guac/donors";
+import Fundraiser, { FundraiserSkeleton } from "app/guac/fundraiser";
 import { baseUrl } from "app/sitemap";
-import { kesemConfig } from "kesem-config";
 import { Metadata } from "next";
 import { Suspense } from "react";
-import { FaEnvelope, FaFacebook, FaInstagram, FaSms } from "react-icons/fa";
+import { FaEnvelope, FaFacebook, FaSms } from "react-icons/fa";
+import GoalAmount, { GoalAmountSkeleton, GoalKidsAmount, GoalKidsAmountSkeleton } from "./goal";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
     title: 'Support Kesem with Kalin "Guac" Patel',
     description:
       "Join me in supporting Kesem, an organization that provides support for children through and beyond their parent's cancer.",
-    url: baseUrl,
+    url: `${baseUrl}/guac`,
     siteName: "Kalin Patel",
     locale: "en_US",
     type: "website",
@@ -31,10 +32,10 @@ export default function KesemPage() {
       <div>
         {/* Hero Section */}
         <div
-          className="relative text-white h-full flex flex-col justify-start items-start pt-8 pb-10 md:flex-row md:pt-36 md:pb-28 md:pl-10 kesem-bg"
+          className="relative text-white h-full flex flex-col justify-start items-start pt-16 pb-10 md:flex-row md:pt-36 md:pb-28 md:pl-10 kesem-bg"
           style={{
             backgroundImage:
-              "linear-gradient(to right, rgba(1, 55, 75, 1) 0% , rgba(1, 55, 75, 0.7) 50%, rgba(1, 55, 75, 0.3)), url('/kesem-group.png')",
+              "linear-gradient(to right, rgba(1, 55, 75, 1) 0% , rgba(1, 55, 75, 0.7) 50%, rgba(1, 55, 75, 0.3)), url('/images/kesem-group.png')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -47,7 +48,7 @@ export default function KesemPage() {
             </p>
             <p className="text-sm mb-4">
               If you would like to donate via check or donor-advised fund, please{" "}
-              <a href="/contact" className="text-white underline">
+              <a href="/contact/camp-kesem?type=Other%20Donation%20Method" className="text-white underline">
                 let me know
               </a>
               .
@@ -72,7 +73,7 @@ export default function KesemPage() {
               {/* section for profile picture and name/info */}
               <section className="flex items-center mb-12 bg-white border border-gray-300 rounded-xl p-6">
                 <img
-                  src="/avatar.png"
+                  src="/images/avatar.png"
                   alt="Kalin Patel"
                   className="w-32 h-32 rounded-full mr-6 object-cover border-4 border-yellow-500"
                 />
@@ -80,7 +81,6 @@ export default function KesemPage() {
                   <h2 className="text-4xl font-bold text-indigo-900">Kalin "Guac" Patel</h2>
                   <p className="text-base text-gray-700">Kesem at University of Illinois</p>
                   <p className="text-base text-gray-700">Teen Leadership Program Coordinator</p>
-                  {/* link to contact, link to my main site on one line */}
                   <p className="text-base text-gray-700">
                     <a
                       href="/"
@@ -112,8 +112,16 @@ export default function KesemPage() {
               </p>
               <p className="text-lg mb-8">
                 Fundraising is absolutely essential to keeping our chapter of Kesem alive for our campers. If I can
-                reach my goal of $5,000, I’ll be able to help send ten campers to camp, free of charge. Every donation,
-                no matter the size, helps directly impact these kids' lives.
+                reach my goal of{" "}
+                <Suspense fallback={<GoalAmountSkeleton />}>
+                  <GoalAmount />
+                </Suspense>
+                , I’ll be able to help send{" "}
+                <Suspense fallback={<GoalKidsAmountSkeleton />}>
+                  <GoalKidsAmount />
+                </Suspense>{" "}
+                campers to camp, free of charge. Every donation, no matter the size, helps directly impact these kids'
+                lives.
               </p>
               <p className="text-lg mb-8">
                 I am so grateful for your support, and I can’t wait to share the impact of your donations with you all.
@@ -146,16 +154,6 @@ export default function KesemPage() {
                     Share on Facebook
                   </a>
                   <a
-                    href={`https://www.instagram.com/?url=${baseUrl}/guac`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-pink-500 text-white px-4 py-2 rounded shadow hover:bg-pink-600 transition"
-                    title="Will open Instagram with this link attached"
-                  >
-                    <FaInstagram className="inline-block mr-2" />
-                    Share on Instagram
-                  </a>
-                  <a
                     href={`mailto:?subject=Support Kesem&body=Check out this fundraising page: ${baseUrl}/guac. Join me in supporting Kesem, an organization that provides support for children through and beyond their parent's cancer.`}
                     target="_blank"
                     className="bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700 transition"
@@ -186,7 +184,7 @@ export default function KesemPage() {
               </a>
               <p className="text-sm mt-4">
                 If you would like to donate via check or donor-advised fund, please{" "}
-                <a href="/contact" className="text-black underline">
+                <a href="/contact/camp-kesem?type=Other%20Donation%20Method" className="text-black underline">
                   let me know
                 </a>
                 .

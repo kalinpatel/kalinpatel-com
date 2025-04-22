@@ -1,5 +1,5 @@
 export const kesemConfig = {
-  showKesemBanner: true,
+  showKesemBanner: false,
   fundraisingPageId: "5845528",
   showDonors: true,
   caching: {

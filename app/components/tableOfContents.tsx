@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 
 const sections = [
   { id: "education", label: "Education" },
-  { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
+  { id: "experience", label: "Experience" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -16,16 +16,27 @@ export function TableOfContents() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY + 150;
+      const OFFSET = window.innerHeight / 3;
+      const BOTTOM_OFFSET = 50; // Offset from the bottom of the page
+      const scrollY = window.scrollY + OFFSET;
+      const viewportBottom = window.scrollY + window.innerHeight;
 
       let current = "";
       let index = 0;
 
       for (let i = 0; i < sections.length; i++) {
         const el = document.getElementById(sections[i].id);
-        if (el && scrollY >= el.offsetTop) {
-          current = sections[i].id;
-          index = i;
+        if (el) {
+          const isLastSection = i === sections.length - 1;
+          const isInView = scrollY >= el.offsetTop;
+          const hash = window.location.hash;
+          const isHashMatch = hash === `#${sections[i].id}`;
+          const isBarelyVisible = isLastSection && viewportBottom >= el.offsetTop + BOTTOM_OFFSET;
+
+          if (isInView || (isHashMatch && isBarelyVisible)) {
+            current = sections[i].id;
+            index = i;
+          }
         }
       }
 
@@ -34,6 +45,7 @@ export function TableOfContents() {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("hashchange", handleScroll, { passive: true });
     handleScroll(); // run once on mount
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);

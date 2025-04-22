@@ -1,4 +1,5 @@
-import { kesemConfig } from "kesem-config";
+import { kesemConfig } from "app/config/kesem-config";
+import { numberWithCommas } from "./util";
 
 export default async function Fundraiser() {
   const kesemFundraiserReq = fetch(
@@ -14,9 +15,12 @@ export default async function Fundraiser() {
     <div className="w-full max-w-[600px] cursor-default">
       <div className="flex justify-between items-end mb-2 w-full">
         <p className="text-3xl font-bold text-white">
-          ${Math.round(kesemFundraiser?.progress_bar_amount)} <span className="text-lg text-gray-300">raised</span>
+          ${numberWithCommas(Math.round(kesemFundraiser?.progress_bar_amount))}{" "}
+          <span className="text-lg text-gray-300">raised</span>
         </p>
-        <p className="text-base font-medium text-gray-100">Goal: ${Math.round(kesemFundraiser?.goal)}</p>
+        <p className="text-base font-medium text-gray-100">
+          Goal: ${numberWithCommas(Math.round(kesemFundraiser?.goal))}
+        </p>
       </div>
       <div className="w-full bg-gray-200 rounded-full h-6 overflow-hidden">
         <div

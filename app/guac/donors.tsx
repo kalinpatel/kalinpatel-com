@@ -1,4 +1,4 @@
-import { kesemConfig } from "kesem-config";
+import { kesemConfig } from "app/config/kesem-config";
 
 type DonorData = {
   id: string;

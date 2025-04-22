@@ -1,8 +1,10 @@
-import { kesemConfig } from "kesem-config";
+import { kesemConfig } from "app/config/kesem-config";
+import Link from "next/link";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import Footer from "./components/footer";
+import ProjectsOverview from "./components/projectsOverview";
+import ResumeItem from "./components/resumeItem";
 import { TableOfContents } from "./components/tableOfContents";
-import { Navbar } from "./components/nav";
 
 export default function Page() {
   return (
@@ -33,11 +35,15 @@ export default function Page() {
             <div className="lg:w-2/5 lg:pr-8">
               <div className="lg:sticky lg:top-16">
                 <div className="text-center lg:text-left">
-                  <img
-                    src="/avatar.png" // Replace with your profile image path
-                    alt="Kalin Patel"
+                  <div
                     className="w-28 h-28 rounded-full mx-auto lg:mx-0 mb-4 object-cover"
-                  />
+                    style={{
+                      backgroundImage: "url('/images/avatar.png')",
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      pointerEvents: "none",
+                    }}
+                  ></div>
                   <div className="flex justify-center lg:justify-start space-x-2 mb-4 rounded-full bg-indigo-200 border border-indigo-300 p-1 w-fit mx-auto lg:mx-0">
                     <span className="px-3 py-1 text-sm bg-white border border-gray-300 rounded-full">Chicago, IL</span>
                     <span className="px-3 py-1 text-sm bg-white border border-gray-300 rounded-full">
@@ -92,12 +98,11 @@ export default function Page() {
                     Kesem is a national organization that provides a free week of summer camp for children affected by a
                     parent's cancer. As a coordinator and counselor at Kesem at University of Illinois, I'm fundraising
                     to reach my goal of $5,000 to send 10 campers to camp this summer.{" "}
-                    <span className="text-indigo-900 font-bold">Join me in supporting this cause!</span>
+                    <span className="text-gray-900 font-bold">Join me in supporting this cause!</span>
                   </p>
                   <a
                     href="/guac"
                     target="_blank"
-                    rel="noopener noreferrer"
                     className="inline-block px-6 py-2 bg-indigo-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-600 transition"
                   >
                     Learn More
@@ -107,34 +112,103 @@ export default function Page() {
               <div className="mb-10" id="education">
                 <h2 className="text-3xl font-bold mb-2">Education</h2>
                 <div className="block-i-cursor">
-                  <h3 className="font-semibold text-lg">University of Illinois Urbana–Champaign</h3>
-                  <p className="text-sm text-gray-600">B.S. Computer Science, Minor in Business</p>
-                  <p className="text-sm text-gray-600">2024–2028</p>
-                </div>
-              </div>
-              <div className="mb-10" id="experience">
-                <h2 className="text-3xl font-bold mb-2">Experience</h2>
-                <div>
-                  {[...Array(0)].map((_, i) => (
-                    <div key={i}>
-                      <h3 className="font-semibold text-lg">University of Illinois Urbana–Champaign</h3>
-                      <p className="text-sm text-gray-600">B.S. Computer Science, Minor in Business</p>
-                      <p className="text-sm text-gray-600">2024–2028</p>
-                    </div>
-                  ))}
+                  <ResumeItem
+                    title="University of Illinois Urbana–Champaign"
+                    description={["B.S. Computer Science, Minor in Business"]}
+                    dates="2024–2028"
+                  />
                 </div>
               </div>
               <div className="mb-10" id="projects">
                 <h2 className="text-3xl font-bold mb-2">Projects</h2>
+                <p className="text-gray-700 mt-8">
+                  I am currently working on a few projects that are not yet published. Stay tuned for updates!
+                </p>
+                <ProjectsOverview
+                  projects={
+                    [
+                      // {
+                      //   name: "PrairiePlus",
+                      //   description: "A browser extension that makes PrairieLearn a little bit better.",
+                      //   image: "/images/prairie-plus-card.png",
+                      //   pageUrl: "/projects/prairie-plus",
+                      //   github: {
+                      //     url: "https://github.com/kalinpatel/prairie-plus",
+                      //     repoTitle: "kalinpatel/prairie-plus",
+                      //   },
+                      // },
+                      // {
+                      //   name: "Test Project 2",
+                      //   description: "This is a test project.",
+                      //   // image: "/images/prairie-plus-card.png",
+                      //   pageUrl: "/projects/test-project-2",
+                      //   tag: "Open Source",
+                      // },
+                    ]
+                  }
+                />
+              </div>
+              <div className="mb-10" id="experience">
+                <h2 className="text-3xl font-bold mb-2">Experience</h2>
                 <div>
-                  {[...Array(0)].map((_, i) => (
-                    <div key={i}>
-                      <h3 className="font-semibold text-lg">University of Illinois Urbana–Champaign</h3>
-                      <p className="text-sm text-gray-600">B.S. Computer Science, Minor in Business</p>
-                      <p className="text-sm text-gray-600">2024–2028</p>
-                    </div>
-                  ))}
+                  <ResumeItem
+                    title="Technical Operations Lead"
+                    subtitle="The Golf Practice"
+                    dates="December 2024 – Present"
+                    description={[
+                      "Led the end-to-end implementation of a new booking system, including development in PHP, HTML/CSS/JS, and integrating partner APIs, to process 600+ bookings/month and 11k clients",
+                      "Managed website updates, facility technology, and PBX phone system across multiple locations",
+                      "Designed user-friendly wireframes, graphics, and custom email templates",
+                    ]}
+                  />
+                  <ResumeItem
+                    title="User Experience and Digital Engineering Intern"
+                    subtitle="Inspire Brands"
+                    dates="December 2021 – March 2022"
+                    description={[
+                      "Collaborated with digital marketing and product management teams to analyze the UX/UI and improve the Next.js website for customer-facing ordering for all Buffalo Wild Wings restaurants",
+                      "Designed and executed manual and automated tests to identify customer acquisition flow and online ordering issues before rollout",
+                      "Presented reports of customer experience issues to engineering and marketing leads",
+                    ]}
+                  />
+                  <ResumeItem
+                    title="Program Lead"
+                    subtitle="The Golf Practice"
+                    dates="April 2024 – August 2024"
+                    description={[
+                      "Created innovative curriculum and advertising campaigns that contributed to $40K+ in new revenue and 35% more enrollments for a new location",
+                      "Managed TrackMan technology, installed new radar units, led implementation of new software, documented technical workflow, and trained all staff",
+                      "Oversaw 15 staff to maintain a collaborative environment and provided daily feedback to foster continuous improvements",
+                    ]}
+                  />
+                  <ResumeItem
+                    title="Golf Coach"
+                    subtitle="The Golf Practice"
+                    dates="May 2021 – March 2024"
+                    description={[
+                      "Taught individual lessons and led group classes for 20+ junior golfers",
+                      "Created curriculum training documents to consistently and efficiently train new staff and ensure proper instruction that met required standards from senior coaching staff",
+                    ]}
+                  />
                 </div>
+              </div>
+              <div className="mb-10" id="contact">
+                <h2 className="text-3xl font-bold mb-2">Contact</h2>
+                <p className="text-gray-700 mt-8">
+                  {/* link/button to /contact */}
+                  <Link
+                    href="/contact"
+                    className="inline-block px-6 py-2 bg-indigo-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-600 transition"
+                  >
+                    Get in Touch
+                  </Link>
+                  <span className="text-gray-500 ml-2">
+                    or email me directly at{" "}
+                    <a href="mailto:hello@kalinpatel.me" className="text-indigo-600 hover:underline">
+                      hello@kalinpatel.me
+                    </a>
+                  </span>
+                </p>
               </div>
               <Footer />
             </div>
