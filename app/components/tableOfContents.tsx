@@ -16,7 +16,7 @@ export function TableOfContents() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const OFFSET = window.innerHeight / 3;
+      const OFFSET = 0; // window.innerHeight / 3;
       const BOTTOM_OFFSET = 50; // Offset from the bottom of the page
       const scrollY = window.scrollY + OFFSET;
       const viewportBottom = window.scrollY + window.innerHeight;
