@@ -6,7 +6,7 @@ import Fundraiser, { FundraiserSkeleton } from "app/guac/fundraiser";
 import { baseUrl } from "app/sitemap";
 import { Metadata } from "next";
 import { Suspense } from "react";
-import { FaEnvelope, FaFacebook, FaSms } from "react-icons/fa";
+import { FaEnvelope, FaFacebook, FaLinkedin, FaSms, FaWhatsapp } from "react-icons/fa";
 import GoalAmount, { GoalAmountSkeleton, GoalKidsAmount, GoalKidsAmountSkeleton } from "./goal";
 
 export const metadata: Metadata = {
@@ -155,16 +155,36 @@ export default function KesemPage() {
                     href={`https://www.facebook.com/sharer/sharer.php?u=${baseUrl}/guac`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700 transition"
+                    className="bg-[#1877F2] text-white px-4 py-2 rounded shadow hover:bg-blue-700 transition"
                     title="Will open Facebook with this link attached so you can create a new post"
                   >
                     <FaFacebook className="inline-block mr-2" />
                     Share on Facebook
                   </a>
                   <a
+                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${baseUrl}/guac`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#0a66c2] text-white px-4 py-2 rounded shadow hover:bg-blue-800 transition"
+                    title="Will open LinkedIn with this link attached so you can create a new post"
+                  >
+                    <FaLinkedin className="inline-block mr-2" />
+                    Share on LinkedIn
+                  </a>
+                  <a
+                    href={`https://api.whatsapp.com/send?text=Check out this fundraising page: ${baseUrl}/guac. Join me in supporting Kesem, an organization that provides support for children through and beyond their parent's cancer.`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700 transition"
+                    title="Will open WhatsApp with this link attached so you can create a new message"
+                  >
+                    <FaWhatsapp className="inline-block mr-2" />
+                    Share on WhatsApp
+                  </a>
+                  <a
                     href={`mailto:?subject=Support Kesem&body=Check out this fundraising page: ${baseUrl}/guac. Join me in supporting Kesem, an organization that provides support for children through and beyond their parent's cancer.`}
                     target="_blank"
-                    className="bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700 transition"
+                    className="bg-cyan-600 text-white px-4 py-2 rounded shadow hover:bg-cyan-700 transition"
                     title="Will open your email client with this link pre-filled"
                   >
                     <FaEnvelope className="inline-block mr-2" />
@@ -176,7 +196,7 @@ export default function KesemPage() {
                     title="Will open your SMS app with this link pre-filled"
                   >
                     <FaSms className="inline-block mr-2" />
-                    Share via SMS
+                    Share via Text
                   </a>
                 </div>
               </div>
