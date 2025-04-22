@@ -4,12 +4,15 @@ import { FaHome } from "react-icons/fa";
 
 const navItems = {
   "/": {
-    name: "home",
+    name: "Home",
     icon: <FaHome className="text-gray-500" />,
+  },
+  "/guac": {
+    name: "Camp Kesem",
   },
 };
 
-export function Navbar() {
+export function Navbar({ homeOnly = false }: { homeOnly?: boolean }) {
   return (
     <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-white border border-gray-200 shadow-lg rounded-2xl px-2 py-2 flex items-center space-x-2 z-100">
       <Link className="text-black ml-2 hover:text-indigo-900 transition-colors duration-200 font-semibold" href="/">
