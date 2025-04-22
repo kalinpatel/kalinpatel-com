@@ -13,12 +13,14 @@ export default function FormSection() {
   const service = params.service ? params.service[0] : null;
   const query = useSearchParams();
   const passthroughNote = query.get("note");
+  const hiddenNote = query.get("ref");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
     service: contactConfig.validServices.find((s) => s.slug === service)?.name || "",
     passthroughNote: passthroughNote || "",
+    hiddenNote: hiddenNote || "",
   });
   const router = useRouter();
 
@@ -76,6 +78,7 @@ export default function FormSection() {
             access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
             subject: `Contact Form Submission from ${formData.name}`,
             from_name: formData.name,
+            hidden_note: formData.hiddenNote,
             ...formData,
           }),
         });

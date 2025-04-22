@@ -56,7 +56,10 @@ export default function KesemPage() {
             </p>
             <p className="text-sm mb-4">
               If you would like to donate via check or donor-advised fund, please{" "}
-              <a href="/contact/camp-kesem?type=Other%20Donation%20Method" className="text-white underline">
+              <a
+                href="/contact/camp-kesem?note=Alternate%20Donation%20Method&ref=Guac%20Page%Hero"
+                className="text-white underline"
+              >
                 let me know
               </a>
               .
@@ -78,7 +81,6 @@ export default function KesemPage() {
         <section className="py-16 bg-gray-100 text-center text-black">
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16">
             <div className="md:col-span-2 px-8 text-left">
-              {/* section for profile picture and name/info */}
               <section className="flex items-center mb-12 bg-white border border-gray-300 rounded-xl p-6">
                 <img
                   src="/images/avatar.png"
@@ -98,7 +100,11 @@ export default function KesemPage() {
                       About
                     </a>{" "}
                     |{" "}
-                    <a href="/contact" target="_blank" className="text-indigo-900 underline">
+                    <a
+                      href="/contact?ref=From%20Kesem%20Donation%20Page%20About%20Me"
+                      target="_blank"
+                      className="text-indigo-900 underline"
+                    >
                       Contact
                     </a>
                   </p>
@@ -212,7 +218,10 @@ export default function KesemPage() {
               </a>
               <p className="text-sm mt-4">
                 If you would like to donate via check or donor-advised fund, please{" "}
-                <a href="/contact/camp-kesem?type=Other%20Donation%20Method" className="text-black underline">
+                <a
+                  href="/contact/camp-kesem?note=Alternate%20Donation%20Method&ref=Guac%20Page%Sidebar"
+                  className="text-black underline"
+                >
                   let me know
                 </a>
                 .
@@ -222,7 +231,6 @@ export default function KesemPage() {
         </section>
         {kesemConfig.showDonors && (
           <section className="py-16 text-center text-white bg-indigo-900 relative">
-            {/* thanks to those who donated this year, then include Donors component */}
             <div className="max-w-6xl mx-auto px-4">
               <h2 className="text-3xl font-bold mb-6">Grateful for Our Supporters!</h2>
               <p className="text-lg mb-8">
@@ -231,9 +239,11 @@ export default function KesemPage() {
               <Suspense fallback={<DonorsSkeleton />}>
                 <Donors />
               </Suspense>
-              {/* join them, any donations helps us reach our goal */}
               <p className="text-lg mt-8 max-w-3xl mx-auto">
-                Join them in making a difference! Every donation of any amount helps us reach my goal of sending 10
+                Join them in making a difference! Every donation of any amount helps us reach my goal of sending{" "}
+                <Suspense fallback={<GoalKidsAmountSkeleton />}>
+                  <GoalKidsAmount />
+                </Suspense>{" "}
                 campers to camp.
               </p>
               <a
@@ -245,7 +255,10 @@ export default function KesemPage() {
               </a>
               <p className="text-sm mt-4">
                 If you would like to donate via check or donor-advised fund, please{" "}
-                <a href="/contact" className="text-white underline">
+                <a
+                  href="/contact/camp-kesem?note=Alternate%20Donation%20Method&ref=Guac%20Page%20Bottom"
+                  className="text-white underline"
+                >
                   let me know
                 </a>
                 .
@@ -253,8 +266,6 @@ export default function KesemPage() {
             </div>
           </section>
         )}
-        {/* Footer Section */}
-        {/* spacing */}
         <div className="h-12"></div>
         <Footer />
       </div>
