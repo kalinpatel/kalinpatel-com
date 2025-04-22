@@ -22,6 +22,14 @@ export const metadata: Metadata = {
     siteName: "Kalin Patel",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: `${baseUrl}/images/kesem-group.png`,
+        width: 1200,
+        height: 630,
+        alt: "Kesem Group",
+      },
+    ],
   },
 };
 
