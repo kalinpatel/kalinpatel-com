@@ -11,7 +11,7 @@ export default function Footer() {
           <a href="https://github.com/kalinpatel" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
             <FaGithub className="text-gray-500 hover:text-black" size={20} />
           </a>
-          <a href="https://linkedin.com/in/kalinpatel" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <a href="https://linkedin.com/in/kalinbpatel" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <FaLinkedin className="text-gray-500 hover:text-black" size={20} />
           </a>
           <a href="mailto:hello@kalinpatel.me" aria-label="Email">
