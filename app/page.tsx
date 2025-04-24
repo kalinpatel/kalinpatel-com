@@ -77,7 +77,7 @@ export default function Page() {
                       LinkedIn
                     </a>
                     <a
-                      href="mailto:hello@kalinpatel.me"
+                      href="mailto:hello@kalinpatel.com"
                       className="px-4 py-2 bg-gray-100 rounded-xl hover:bg-gray-200 border border-gray-300"
                     >
                       <FaEnvelope className="inline-block mr-2" />
@@ -204,8 +204,8 @@ export default function Page() {
                   </Link>
                   <span className="text-gray-500 ml-2">
                     or email me directly at{" "}
-                    <a href="mailto:hello@kalinpatel.me" className="text-indigo-600 hover:underline">
-                      hello@kalinpatel.me
+                    <a href="mailto:hello@kalinpatel.com" className="text-indigo-600 hover:underline">
+                      hello@kalinpatel.com
                     </a>
                   </span>
                 </p>

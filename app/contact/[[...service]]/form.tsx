@@ -119,8 +119,8 @@ export default function FormSection() {
         </p>
         <p className="text-base text-gray-700 mb-6">
           You can also email me directly at{" "}
-          <a href="mailto:hello@kalinpatel.me" className="text-indigo-600 hover:underline">
-            hello@kalinpatel.me
+          <a href="mailto:hello@kalinpatel.com" className="text-indigo-600 hover:underline">
+            hello@kalinpatel.com
           </a>
           .
         </p>
