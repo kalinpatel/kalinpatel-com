@@ -38,7 +38,7 @@ export default function Page() {
                   <div
                     className="w-28 h-28 rounded-full mx-auto lg:mx-0 mb-4 object-cover"
                     style={{
-                      backgroundImage: "url('/images/avatar.png')",
+                      backgroundImage: "url('/site-images/avatar.png')",
                       backgroundSize: "cover",
                       backgroundPosition: "center",
                       pointerEvents: "none",
@@ -130,7 +130,7 @@ export default function Page() {
                       // {
                       //   name: "PrairiePlus",
                       //   description: "A browser extension that makes PrairieLearn a little bit better.",
-                      //   image: "/images/prairie-plus-card.png",
+                      //   image: "/site-images/prairie-plus-card.png",
                       //   pageUrl: "/projects/prairie-plus",
                       //   github: {
                       //     url: "https://github.com/kalinpatel/prairie-plus",
@@ -140,7 +140,7 @@ export default function Page() {
                       // {
                       //   name: "Test Project 2",
                       //   description: "This is a test project.",
-                      //   // image: "/images/prairie-plus-card.png",
+                      //   // image: "/site-images/prairie-plus-card.png",
                       //   pageUrl: "/projects/test-project-2",
                       //   tag: "Open Source",
                       // },

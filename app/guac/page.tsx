@@ -83,7 +83,7 @@ export default function KesemPage() {
             <div className="md:col-span-2 px-8 text-left">
               <section className="flex items-center mb-12 bg-white border border-gray-300 rounded-xl p-6">
                 <img
-                  src="/images/avatar.png"
+                  src="/site-images/avatar.png"
                   alt="Kalin Patel"
                   className="w-32 h-32 rounded-full mr-6 object-cover border-4 border-yellow-500"
                 />
