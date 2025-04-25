@@ -6,6 +6,7 @@
     "start": "next start",
     "env": "vercel env pull .env.local && npx dotenv-types-generator -f .env.local"
   },
+  "packageManager": "yarn@1.22.22",
   "dependencies": {
     "@tailwindcss/postcss": "4.0.0-alpha.13",
     "@types/node": "20.11.17",
