@@ -1,6 +1,6 @@
+import Footer from "app/components/footer";
 import { Navbar } from "app/components/nav";
 import FormSection from "./form";
-import Footer from "app/components/footer";
 
 export default function ContactPage() {
   return (

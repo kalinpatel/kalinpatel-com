@@ -1,7 +1,7 @@
 "use client";
 
 import { contactConfig } from "app/config/contact-config";
-import { useParams, useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { AiOutlineLoading } from "react-icons/ai";
 import { FaCheckCircle } from "react-icons/fa";
@@ -9,10 +9,9 @@ import { FaCheckCircle } from "react-icons/fa";
 export default function FormSection() {
   // this file is in the contact/[[...service]] folder
   // get the service from the URL if it exists
-  const params = useParams();
-  const service = params.service ? params.service[0] : null;
   const query = useSearchParams();
   const passthroughNote = query.get("note");
+  const service = query.get("for") || null;
   const hiddenNote = query.get("ref");
   const [formData, setFormData] = useState({
     name: "",
@@ -22,11 +21,7 @@ export default function FormSection() {
     passthroughNote: passthroughNote || "",
     hiddenNote: hiddenNote || "",
   });
-  const router = useRouter();
 
-  if (service && !contactConfig.validServices.some((s) => s.slug === service)) {
-    router.replace("/contact");
-  }
   const [errors, setErrors] = useState({
     name: "",
     email: "",
