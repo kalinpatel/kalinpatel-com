@@ -57,7 +57,7 @@ export default function KesemPage() {
             <p className="text-sm mb-4">
               If you would like to donate via check or donor-advised fund, please{" "}
               <a
-                href="/contact/camp-kesem?note=Alternate%20Donation%20Method&ref=Guac%20Page%Hero"
+                href="/contact?for=camp-kesem&note=Alternate%20Donation%20Method&ref=Guac%20Page%Hero"
                 className="text-white underline"
               >
                 let me know
@@ -219,7 +219,7 @@ export default function KesemPage() {
               <p className="text-sm mt-4">
                 If you would like to donate via check or donor-advised fund, please{" "}
                 <a
-                  href="/contact/camp-kesem?note=Alternate%20Donation%20Method&ref=Guac%20Page%Sidebar"
+                  href="/contact?for=camp-kesem&note=Alternate%20Donation%20Method&ref=Guac%20Page%Sidebar"
                   className="text-black underline"
                 >
                   let me know
@@ -256,7 +256,7 @@ export default function KesemPage() {
               <p className="text-sm mt-4">
                 If you would like to donate via check or donor-advised fund, please{" "}
                 <a
-                  href="/contact/camp-kesem?note=Alternate%20Donation%20Method&ref=Guac%20Page%20Bottom"
+                  href="/contact?for=camp-kesem&note=Alternate%20Donation%20Method&ref=Guac%20Page%20Bottom"
                   className="text-white underline"
                 >
                   let me know
