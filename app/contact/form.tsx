@@ -73,7 +73,7 @@ export default function FormSection() {
             access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
             subject: `Contact Form Submission from ${formData.name}`,
             from_name: formData.name,
-            hidden_note: formData.hiddenNote,
+            reference: formData.hiddenNote,
             ...formData,
           }),
         });
@@ -140,8 +140,8 @@ export default function FormSection() {
       <div>
         <form onSubmit={handleSubmit} className="space-y-6">
           <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />
-          <input type="hidden" name="service" value={formData.service} />
-          <input type="hidden" name="passthroughNote" value={formData.passthroughNote} />
+          <input type="hidden" name="for" value={formData.service} />
+          <input type="hidden" name="note" value={formData.passthroughNote} />
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-gray-700">
               Your Name
