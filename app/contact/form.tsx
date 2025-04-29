@@ -73,8 +73,8 @@ export default function FormSection() {
             access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
             subject: `Contact Form Submission from ${formData.name}`,
             from_name: formData.name,
-            reference: formData.hiddenNote,
             ...formData,
+            reference: formData.hiddenNote,
           }),
         });
 
