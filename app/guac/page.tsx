@@ -7,6 +7,7 @@ import { baseUrl } from "app/sitemap";
 import { Metadata } from "next";
 import { Suspense } from "react";
 import { FaEnvelope, FaFacebook, FaLinkedin, FaSms, FaWhatsapp } from "react-icons/fa";
+import MatchingWidget from "./dtdwidget";
 import GoalAmount, { GoalAmountSkeleton, GoalKidsAmount, GoalKidsAmountSkeleton } from "./goal";
 
 export const metadata: Metadata = {
@@ -266,6 +267,45 @@ export default function KesemPage() {
             </div>
           </section>
         )}
+        <section id="matching" className="py-16 bg-gray-50">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-start px-4">
+            <div className="bg-white shadow-lg rounded-lg p-6">
+              <h3 className="text-2xl font-bold mb-4 text-indigo-900">Double Your Impact!</h3>
+              <p className="text-gray-700 mb-4">
+                Many companies offer matching gift programs to double the impact of your donation. Check with your
+                employer to see if they participate in a matching program. If they do, you can submit your donation
+                receipt to have your gift matched!
+              </p>
+              <p className="text-gray-700 mb-4 font-bold">
+                To help your donation directly impact campers at our chapter, please indicate "University of Illinois -
+                Kalin 'Guac' Patel" as the program, recipient, or memo line when submitting your matching gift. Please
+                let me know if you submit a matching gift, so we are prepared to accept it!
+              </p>
+              <p className="text-gray-500 text-sm mb-4">
+                Camp Kesem
+                <br />
+                440 N Barranca Ave #2273
+                <br />
+                Covina, CA 91723
+                <br />
+                EIN 51-0454157
+              </p>
+              <p className="text-gray-700 mb-4">
+                If you have any questions, feel free to{" "}
+                <a
+                  href="/contact?for=camp-kesem&note=Matching%20Gifts&ref=Matching%20Section"
+                  className="text-indigo-900 underline"
+                >
+                  let me know
+                </a>
+                .
+              </p>
+            </div>
+            <div>
+              <MatchingWidget />
+            </div>
+          </div>
+        </section>
         <div className="h-12"></div>
         <Footer />
       </div>
