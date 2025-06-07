@@ -8,8 +8,13 @@ import React from "react";
 export default function Statsig({ children }: { children: React.ReactNode }) {
   const { client } = useClientAsyncInit(
     process.env.NEXT_PUBLIC_STATSIG_CLIENT,
-    { userID: "a-user" },
-    { plugins: [new StatsigAutoCapturePlugin(), new StatsigSessionReplayPlugin()] }
+    {},
+    {
+      plugins: [new StatsigAutoCapturePlugin(), new StatsigSessionReplayPlugin()],
+      networkConfig: {
+        api: "https://t.kalinpatel.com/v1/",
+      },
+    }
   );
 
   return (

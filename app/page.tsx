@@ -123,7 +123,9 @@ export default function Page() {
                   <ResumeItem
                     title="University of Illinois Urbana–Champaign"
                     description={[
-                      <p className="font-semibold">B.S. Computer Science, Minor in Business</p>,
+                      <p className="font-semibold" key="degree">
+                        B.S. Computer Science, Minor in Business
+                      </p>,
                       "GPA: 3.9/4.0",
                       "James Scholar Honors Program",
                       "Dean's List (Fall 2024)",

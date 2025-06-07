@@ -6,6 +6,7 @@ import { baseUrl } from "app/sitemap";
 import { Metadata } from "next";
 import { Suspense } from "react";
 import { FaEnvelope, FaFacebook, FaLinkedin, FaSms, FaWhatsapp } from "react-icons/fa";
+import DonationButton from "./donationButton";
 import MatchingWidget from "./dtdwidget";
 import GoalAmount, { GoalAmountSkeleton, GoalKidsAmount, GoalKidsAmountSkeleton } from "./goal";
 
@@ -66,13 +67,7 @@ export default function KesemPage() {
               </a>
               .
             </p>
-            <a
-              className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-6 rounded mb-6 inline-block"
-              href={`https://donate.kesem.org/give/f${process.env.NEXT_PUBLIC_KESEM_FUNDRAISINGID}/#!/donation/checkout`}
-              target="_blank"
-            >
-              Donate Now
-            </a>
+            <DonationButton />
             <Suspense fallback={<FundraiserSkeleton />}>
               <Fundraiser />
             </Suspense>
@@ -211,13 +206,7 @@ export default function KesemPage() {
               <p className="text-sm mt-8">
                 <span className="font-bold">Donate now to make a difference!</span>
               </p>
-              <a
-                className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-6 rounded mt-4 inline-block"
-                href={`https://donate.kesem.org/give/f${process.env.NEXT_PUBLIC_KESEM_FUNDRAISINGID}/#!/donation/checkout`}
-                target="_blank"
-              >
-                Donate Now
-              </a>
+              <DonationButton />
               <p className="text-sm mt-4">
                 If you would like to donate via check or donor-advised fund, please{" "}
                 <a
@@ -249,13 +238,7 @@ export default function KesemPage() {
               </Suspense>{" "}
               campers to camp.
             </p>
-            <a
-              className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-6 rounded mt-4 inline-block"
-              href={`https://donate.kesem.org/give/f${process.env.NEXT_PUBLIC_KESEM_FUNDRAISINGID}/#!/donation/checkout`}
-              target="_blank"
-            >
-              Donate Now
-            </a>
+            <DonationButton />
             <p className="text-sm mt-4">
               If you would like to donate via check or donor-advised fund, please{" "}
               <a
