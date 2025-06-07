@@ -122,8 +122,14 @@ export default function Page() {
                 <div className="block-i-cursor">
                   <ResumeItem
                     title="University of Illinois Urbana–Champaign"
-                    description={["B.S. Computer Science, Minor in Business"]}
-                    dates="2024–2028"
+                    description={[
+                      <p className="font-semibold">B.S. Computer Science, Minor in Business</p>,
+                      "GPA: 3.9/4.0",
+                      "James Scholar Honors Program",
+                      "Dean's List (Fall 2024)",
+                      "We CU Community Engaged Scholar Award",
+                    ]}
+                    dates="2024–2027"
                   />
                 </div>
               </div>
@@ -133,32 +139,33 @@ export default function Page() {
                   I am currently working on a few projects that are not yet published. Stay tuned for updates!
                 </p>
                 <ProjectsOverview
-                  projects={
-                    [
-                      // {
-                      //   name: "PrairiePlus",
-                      //   description: "A browser extension that makes PrairieLearn a little bit better.",
-                      //   image: "/site-images/prairie-plus-card.png",
-                      //   pageUrl: "/projects/prairie-plus",
-                      //   github: {
-                      //     url: "https://github.com/kalinpatel/prairie-plus",
-                      //     repoTitle: "kalinpatel/prairie-plus",
-                      //   },
-                      // },
-                      // {
-                      //   name: "Test Project 2",
-                      //   description: "This is a test project.",
-                      //   // image: "/site-images/prairie-plus-card.png",
-                      //   pageUrl: "/projects/test-project-2",
-                      //   tag: "Open Source",
-                      // },
-                    ]
-                  }
+                  projects={[
+                    {
+                      name: "PrairiePlus",
+                      description: "A browser extension that makes PrairieLearn a little bit better.",
+                      image: "/site-images/prairie-plus-card.png",
+                      pageUrl: "/pages/prairie-plus",
+                      github: {
+                        url: "https://github.com/kalinpatel/prairie-plus",
+                        repoTitle: "kalinpatel/prairie-plus",
+                      },
+                    },
+                  ]}
                 />
               </div>
               <div className="mb-10" id="experience">
                 <h2 className="text-3xl font-bold mb-2">Experience</h2>
                 <div>
+                  <ResumeItem
+                    title="Software Engineer Intern"
+                    subtitle="AbbVie"
+                    dates="December 2024 – Present"
+                    description={[
+                      "Led the end-to-end implementation of a new booking system, including development in PHP, HTML/CSS/JS, and integrating partner APIs, to process 600+ bookings/month and 11k clients",
+                      "Managed website updates, facility technology, and PBX phone system across multiple locations",
+                      "Designed user-friendly wireframes, graphics, and custom email templates",
+                    ]}
+                  />
                   <ResumeItem
                     title="Technical Operations Lead"
                     subtitle="The Golf Practice"
