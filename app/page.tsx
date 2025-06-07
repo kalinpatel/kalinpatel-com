@@ -1,9 +1,11 @@
 import Link from "next/link";
+import { Suspense } from "react";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import Footer from "./components/footer";
 import ProjectsOverview from "./components/projectsOverview";
 import ResumeItem from "./components/resumeItem";
 import { TableOfContents } from "./components/tableOfContents";
+import GoalAmount, { GoalAmountSkeleton, GoalKidsAmount, GoalKidsAmountSkeleton } from "./guac/goal";
 
 export default function Page() {
   return (
@@ -95,9 +97,16 @@ export default function Page() {
                   <h3 className="text-2xl font-bold mb-2">Support Kesem at Illinois with me</h3>
                   <p className="text-md text-gray-700 mb-4">
                     Kesem is a national organization that provides a free week of summer camp for children affected by a
-                    parent's cancer. As a coordinator and counselor at Kesem at University of Illinois, I'm fundraising
-                    to reach my goal of $5,000 to send 10 campers to camp this summer.{" "}
-                    <span className="text-gray-900 font-bold">Join me in supporting this cause!</span>
+                    parent's cancer. As a counselor and co-director of Kesem at University of Illinois, I'm fundraising
+                    to reach my goal of{" "}
+                    <Suspense fallback={<GoalAmountSkeleton />}>
+                      <GoalAmount />
+                    </Suspense>{" "}
+                    to send{" "}
+                    <Suspense fallback={<GoalKidsAmountSkeleton />}>
+                      <GoalKidsAmount />
+                    </Suspense>{" "}
+                    campers to camp this summer. Join me in supporting this cause!
                   </p>
                   <a
                     href="/guac"
