@@ -1,7 +1,6 @@
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { DM_Sans as Sans } from "next/font/google";
+import Statsig from "./components/statsig";
 import "./global.css";
 import { baseUrl } from "./sitemap";
 const sans = Sans({
@@ -50,11 +49,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={cx("text-black bg-white text-white bg-black", sans.variable)}>
       <body className="antialiased">
-        <main className="flex-auto min-w-0 flex flex-col">
-          {children}
-          <Analytics />
-          <SpeedInsights />
-        </main>
+        <Statsig>
+          <main className="flex-auto min-w-0 flex flex-col">{children}</main>
+        </Statsig>
       </body>
     </html>
   );

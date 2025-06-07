@@ -8,6 +8,9 @@
   },
   "packageManager": "yarn@1.22.22",
   "dependencies": {
+    "@statsig/react-bindings": "^3.17.2",
+    "@statsig/session-replay": "^3.17.2",
+    "@statsig/web-analytics": "^3.17.2",
     "@tailwindcss/postcss": "4.0.0-alpha.13",
     "@types/node": "20.11.17",
     "@types/number-to-words": "^1.2.3",
