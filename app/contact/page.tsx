@@ -3,6 +3,8 @@ import { Navbar } from "app/components/nav";
 import { Suspense } from "react";
 import FormSection from "./form";
 
+// /contact?for=[service here]&note=[hidden note here]
+
 export default function ContactPage() {
   return (
     <>

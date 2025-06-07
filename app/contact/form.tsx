@@ -1,6 +1,5 @@
 "use client";
 
-import { contactConfig } from "app/config/contact-config";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { AiOutlineLoading } from "react-icons/ai";
@@ -10,16 +9,12 @@ export default function FormSection() {
   // this file is in the contact/[[...service]] folder
   // get the service from the URL if it exists
   const query = useSearchParams();
-  const passthroughNote = query.get("note");
   const service = query.get("for") || null;
-  const hiddenNote = query.get("ref");
+  const reference = query.get("note") || null;
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
-    service: contactConfig.validServices.find((s) => s.slug === service)?.name || "",
-    passthroughNote: passthroughNote || "",
-    hiddenNote: hiddenNote || "",
   });
 
   const [errors, setErrors] = useState({
@@ -74,7 +69,7 @@ export default function FormSection() {
             subject: `Contact Form Submission from ${formData.name}`,
             from_name: formData.name,
             ...formData,
-            reference: formData.hiddenNote,
+            reference: reference,
           }),
         });
 
@@ -107,7 +102,7 @@ export default function FormSection() {
 
   return (
     <div className="w-full max-w-4xl bg-white shadow-lg rounded-lg p-8 grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-      <div className={`flex flex-col ${service || passthroughNote ? "justify-start" : "justify-center"}`}>
+      <div className={`flex flex-col ${service ? "justify-start" : "justify-center"}`}>
         <h1 className="text-4xl font-bold text-indigo-600 mb-4">Contact Me</h1>
         <p className="text-base text-gray-700 mb-2">
           I'd love to hear from you! Fill out the form and I'll get back to you as soon as possible.
@@ -119,7 +114,7 @@ export default function FormSection() {
           </a>
           .
         </p>
-        {(service || passthroughNote) && (
+        {service && (
           <div className="border-t border-gray-300 mt-4 pt-4 mb-2">
             <p className="text-base text-gray-700 mb-1 font-bold">Additional Information:</p>
             <p className="text-sm text-gray-500 mb-2">This information will be included in your message.</p>
@@ -127,21 +122,15 @@ export default function FormSection() {
         )}
         {service && (
           <p className="text-base text-gray-700 mb-2">
-            You are contacting me about: <span className="font-semibold text-indigo-600">{formData.service}</span>
-          </p>
-        )}
-        {passthroughNote && (
-          <p className="text-base text-gray-700 mb-2">
-            Relevant Information:{" "}
-            <span className="font-semibold text-indigo-600">{decodeURIComponent(passthroughNote)}</span>
+            You are contacting me about:{" "}
+            <span className="font-semibold text-indigo-600">{decodeURIComponent(service)}</span>
           </p>
         )}
       </div>
       <div>
         <form onSubmit={handleSubmit} className="space-y-6">
           <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />
-          <input type="hidden" name="for" value={formData.service} />
-          <input type="hidden" name="note" value={formData.passthroughNote} />
+          <input type="hidden" name="for" value={service || ""} />
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-gray-700">
               Your Name

@@ -1,6 +1,5 @@
 import Footer from "app/components/footer";
 import { Navbar } from "app/components/nav";
-import { kesemConfig } from "app/config/kesem-config";
 import Donors, { DonorsSkeleton } from "app/guac/donors";
 import Fundraiser, { FundraiserSkeleton } from "app/guac/fundraiser";
 import { baseUrl } from "app/sitemap";
@@ -67,7 +66,7 @@ export default function KesemPage() {
             </p>
             <a
               className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-6 rounded mb-6 inline-block"
-              href={`https://donate.kesem.org/give/f${kesemConfig.fundraisingPageId}/#!/donation/checkout`}
+              href={`https://donate.kesem.org/give/f${process.env.NEXT_PUBLIC_KESEM_FUNDRAISINGID}/#!/donation/checkout`}
               target="_blank"
             >
               Donate Now
@@ -95,7 +94,7 @@ export default function KesemPage() {
                   <p className="text-base text-gray-700">
                     <a
                       href="/"
-                      target={kesemConfig.showKesemBanner ? "_self" : "_blank"}
+                      target={process.env.NEXT_PUBLIC_KESEM_CONFIG_BANNER ? "_self" : "_blank"}
                       className="text-indigo-900 underline"
                     >
                       About
@@ -212,7 +211,7 @@ export default function KesemPage() {
               </p>
               <a
                 className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-6 rounded mt-4 inline-block"
-                href={`https://donate.kesem.org/give/f${kesemConfig.fundraisingPageId}/#!/donation/checkout`}
+                href={`https://donate.kesem.org/give/f${process.env.NEXT_PUBLIC_KESEM_FUNDRAISINGID}/#!/donation/checkout`}
                 target="_blank"
               >
                 Donate Now
@@ -230,43 +229,41 @@ export default function KesemPage() {
             </div>
           </div>
         </section>
-        {kesemConfig.showDonors && (
-          <section className="py-16 text-center text-white bg-indigo-900 relative">
-            <div className="max-w-6xl mx-auto px-4">
-              <h2 className="text-3xl font-bold mb-6">Grateful for Our Supporters!</h2>
-              <p className="text-lg mb-8">
-                A special thank you to everyone who has donated this year. Your support means the world to us!
-              </p>
-              <Suspense fallback={<DonorsSkeleton />}>
-                <Donors />
-              </Suspense>
-              <p className="text-lg mt-8 max-w-3xl mx-auto">
-                Join them in making a difference! Every donation of any amount helps us reach my goal of sending{" "}
-                <Suspense fallback={<GoalKidsAmountSkeleton />}>
-                  <GoalKidsAmount />
-                </Suspense>{" "}
-                campers to camp.
-              </p>
+        <section className="py-16 text-center text-white bg-indigo-900 relative">
+          <div className="max-w-6xl mx-auto px-4">
+            <h2 className="text-3xl font-bold mb-6">Grateful for Our Supporters!</h2>
+            <p className="text-lg mb-8">
+              A special thank you to everyone who has donated this year. Your support means the world to us!
+            </p>
+            <Suspense fallback={<DonorsSkeleton />}>
+              <Donors />
+            </Suspense>
+            <p className="text-lg mt-8 max-w-3xl mx-auto">
+              Join them in making a difference! Every donation of any amount helps us reach my goal of sending{" "}
+              <Suspense fallback={<GoalKidsAmountSkeleton />}>
+                <GoalKidsAmount />
+              </Suspense>{" "}
+              campers to camp.
+            </p>
+            <a
+              className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-6 rounded mt-4 inline-block"
+              href={`https://donate.kesem.org/give/f${process.env.NEXT_PUBLIC_KESEM_FUNDRAISINGID}/#!/donation/checkout`}
+              target="_blank"
+            >
+              Donate Now
+            </a>
+            <p className="text-sm mt-4">
+              If you would like to donate via check or donor-advised fund, please{" "}
               <a
-                className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-6 rounded mt-4 inline-block"
-                href={`https://donate.kesem.org/give/f${kesemConfig.fundraisingPageId}/#!/donation/checkout`}
-                target="_blank"
+                href="/contact?for=camp-kesem&note=Alternate%20Donation%20Method&ref=Guac%20Page%20Bottom"
+                className="text-white underline"
               >
-                Donate Now
+                let me know
               </a>
-              <p className="text-sm mt-4">
-                If you would like to donate via check or donor-advised fund, please{" "}
-                <a
-                  href="/contact?for=camp-kesem&note=Alternate%20Donation%20Method&ref=Guac%20Page%20Bottom"
-                  className="text-white underline"
-                >
-                  let me know
-                </a>
-                .
-              </p>
-            </div>
-          </section>
-        )}
+              .
+            </p>
+          </div>
+        </section>
         <section id="matching" className="py-16 bg-gray-50">
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-start px-4">
             <div className="bg-white shadow-lg rounded-lg p-6">

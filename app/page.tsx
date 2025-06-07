@@ -1,4 +1,3 @@
-import { kesemConfig } from "app/config/kesem-config";
 import Link from "next/link";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import Footer from "./components/footer";
@@ -24,7 +23,7 @@ export default function Page() {
               transform: `rotate(0deg)`,
               width: "100%",
               height: "100%",
-              minHeight: "1200px",
+              minHeight: "1200px</p>",
               position: "fixed",
               top: "0",
               left: "0",
@@ -91,7 +90,7 @@ export default function Page() {
 
             {/* Right Section */}
             <div className="lg:w-3/5 lg:pl-8 mt-16 lg:mt-0">
-              {kesemConfig.showKesemBanner && (
+              {process.env.NEXT_PUBLIC_KESEM_CONFIG_BANNER === "show" && (
                 <div className="bg-white-100 border-b-4 border-indigo-900 pb-5 mb-10 ">
                   <h3 className="text-2xl font-bold mb-2">Support Kesem at Illinois with me</h3>
                   <p className="text-md text-gray-700 mb-4">

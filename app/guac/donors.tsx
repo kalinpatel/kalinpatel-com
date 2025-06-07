@@ -1,5 +1,3 @@
-import { kesemConfig } from "app/config/kesem-config";
-
 type DonorData = {
   id: string;
   member_name: string | null;
@@ -11,10 +9,10 @@ type DonorData = {
 
 export default async function Donors() {
   const kesemDonorsReq = fetch(
-    `https://donate.kesem.org/frs-api/fundraising-pages/${kesemConfig.fundraisingPageId}/feed-items?per_page=100&sort=linkable_effective_at:desc,linkable_id:desc`,
+    `https://donate.kesem.org/frs-api/fundraising-pages/${process.env.NEXT_PUBLIC_KESEM_FUNDRAISINGID}/feed-items?per_page=100&sort=linkable_effective_at:desc,linkable_id:desc`,
     {
       next: {
-        revalidate: kesemConfig.caching.donorsCacheDuration,
+        revalidate: 60 * 60, // 1 hour cache duration
       },
     }
   );

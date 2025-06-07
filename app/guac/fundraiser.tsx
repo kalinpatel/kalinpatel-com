@@ -1,12 +1,11 @@
-import { kesemConfig } from "app/config/kesem-config";
 import { numberWithCommas } from "./util";
 
 export default async function Fundraiser() {
   const kesemFundraiserReq = fetch(
-    `https://donate.kesem.org/frs-api/fundraising-pages/${kesemConfig.fundraisingPageId}?with=fundraising_team`,
+    `https://donate.kesem.org/frs-api/fundraising-pages/${process.env.NEXT_PUBLIC_KESEM_FUNDRAISINGID}?with=fundraising_team`,
     {
       next: {
-        revalidate: kesemConfig.caching.overviewCacheDuration,
+        revalidate: 60, // 1 minute cache duration
       },
     }
   );
