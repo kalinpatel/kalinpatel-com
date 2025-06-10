@@ -67,7 +67,7 @@ export default function KesemPage() {
               </a>
               .
             </p>
-            <DonationButton />
+            <DonationButton className="!mt-0" />
             <Suspense fallback={<FundraiserSkeleton />}>
               <Fundraiser />
             </Suspense>

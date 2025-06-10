@@ -7,9 +7,9 @@ const navItems = {
     name: "Home",
     icon: <FaHome className="text-gray-500" />,
   },
-  "/guac": {
-    name: "Camp Kesem",
-  },
+  // "/guac": {
+  //   name: "Camp Kesem",
+  // },
 };
 
 export function Navbar({ homeOnly = false }: { homeOnly?: boolean }) {
