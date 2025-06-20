@@ -146,10 +146,10 @@ export default function Page() {
                       name: "PrairiePlus",
                       description: "A browser extension that makes PrairieLearn a little bit better.",
                       image: "/site-images/prairie-plus-card.png",
-                      pageUrl: "/pages/prairie-plus",
+                      pageUrl: "/prairie-plus",
                       github: {
-                        url: "https://github.com/kalinpatel/prairie-plus",
-                        repoTitle: "kalinpatel/prairie-plus",
+                        url: "https://github.com/kalinpatel/PrairiePlus",
+                        repoTitle: "kalinpatel/PrairiePlus",
                       },
                     },
                   ]}
@@ -161,17 +161,16 @@ export default function Page() {
                   <ResumeItem
                     title="Software Engineer Intern"
                     subtitle="AbbVie"
-                    dates="December 2024 – Present"
+                    dates="May 2025 – Present"
                     description={[
-                      "Led the end-to-end implementation of a new booking system, including development in PHP, HTML/CSS/JS, and integrating partner APIs, to process 600+ bookings/month and 11k clients",
-                      "Managed website updates, facility technology, and PBX phone system across multiple locations",
-                      "Designed user-friendly wireframes, graphics, and custom email templates",
+                      "Supporting development of internal software tools, including a custom LLM interface for healthcare providers and marketers",
+                      "Helping streamline digital content approval processes through AI integration",
                     ]}
                   />
                   <ResumeItem
                     title="Technical Operations Lead"
                     subtitle="The Golf Practice"
-                    dates="December 2024 – Present"
+                    dates="December 2024 – May 2025"
                     description={[
                       "Led the end-to-end implementation of a new booking system, including development in PHP, HTML/CSS/JS, and integrating partner APIs, to process 600+ bookings/month and 11k clients",
                       "Managed website updates, facility technology, and PBX phone system across multiple locations",
@@ -188,25 +187,32 @@ export default function Page() {
                       "Presented reports of customer experience issues to engineering and marketing leads",
                     ]}
                   />
-                  <ResumeItem
-                    title="Program Lead"
-                    subtitle="The Golf Practice"
-                    dates="April 2024 – August 2024"
-                    description={[
-                      "Created innovative curriculum and advertising campaigns that contributed to $40K+ in new revenue and 35% more enrollments for a new location",
-                      "Managed TrackMan technology, installed new radar units, led implementation of new software, documented technical workflow, and trained all staff",
-                      "Oversaw 15 staff to maintain a collaborative environment and provided daily feedback to foster continuous improvements",
-                    ]}
-                  />
-                  <ResumeItem
-                    title="Golf Coach"
-                    subtitle="The Golf Practice"
-                    dates="May 2021 – March 2024"
-                    description={[
-                      "Taught individual lessons and led group classes for 20+ junior golfers",
-                      "Created curriculum training documents to consistently and efficiently train new staff and ensure proper instruction that met required standards from senior coaching staff",
-                    ]}
-                  />
+                  <details className="mt-6 border-2 border-gray-200 rounded-lg">
+                    <summary className="px-4 py-2.5 bg-gray-50 font-medium cursor-pointer hover:bg-gray-100 rounded-lg">
+                      Additional Experiences
+                    </summary>
+                    <div className="p-4">
+                      <ResumeItem
+                        title="Program Lead"
+                        subtitle="The Golf Practice"
+                        dates="April 2024 – August 2024"
+                        description={[
+                          "Created innovative curriculum and advertising campaigns that contributed to $40K+ in new revenue and 35% more enrollments for a new location",
+                          "Managed TrackMan technology, installed new radar units, led implementation of new software, documented technical workflow, and trained all staff",
+                          "Oversaw 15 staff to maintain a collaborative environment and provided daily feedback to foster continuous improvements",
+                        ]}
+                      />
+                      <ResumeItem
+                        title="Golf Coach"
+                        subtitle="The Golf Practice"
+                        dates="May 2021 – March 2024"
+                        description={[
+                          "Taught individual lessons and led group classes for 20+ junior golfers",
+                          "Created curriculum training documents to consistently and efficiently train new staff and ensure proper instruction that met required standards from senior coaching staff",
+                        ]}
+                      />
+                    </div>
+                  </details>
                 </div>
               </div>
               <div className="mb-10" id="contact">
