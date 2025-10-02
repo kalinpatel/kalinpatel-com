@@ -87,7 +87,7 @@ export default function KesemPage() {
                 <div>
                   <h2 className="text-4xl font-bold text-indigo-900">Kalin "Guac" Patel</h2>
                   <p className="text-base text-gray-700">Kesem at University of Illinois</p>
-                  <p className="text-base text-gray-700">Teen Leadership Program Coordinator</p>
+                  <p className="text-base text-gray-700">Co-Director</p>
                   <p className="text-base text-gray-700">
                     <a
                       href="/"
@@ -116,10 +116,9 @@ export default function KesemPage() {
               </p>
               <p className="text-lg mb-8">
                 I’ve been connected with Kesem for nearly a decade, first as a camper, and now as a leader in the Kesem
-                at Illinois chapter. This year, I’m serving as our Teen Leadership Program Coordinator, and I feel
-                incredibly fortunate to give back to an organization that shaped me in so many ways. I know firsthand
-                how powerful Kesem’s programs are – they provided me with a place to heal, grow, and build lifelong
-                friendships.
+                at Illinois chapter. This year, I’m serving as our Co-Director, and I feel incredibly fortunate to give
+                back to an organization that shaped me in so many ways. I know firsthand how powerful Kesem’s programs
+                are – they provided me with a place to heal, grow, and build lifelong friendships.
               </p>
               <p className="text-lg mb-8">
                 Fundraising is absolutely essential to keeping our chapter of Kesem alive for our campers. If I can
