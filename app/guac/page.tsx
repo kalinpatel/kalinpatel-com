@@ -25,10 +25,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${baseUrl}/images/kesem-group.png`,
+        url: `${baseUrl}/images/chedda.jpeg`,
         width: 1200,
         height: 630,
-        alt: "Kesem Group",
+        alt: "Kesem Photo",
       },
     ],
   },
@@ -44,7 +44,7 @@ export default function KesemPage() {
           className="relative text-white h-full flex flex-col justify-start items-start pt-16 pb-10 md:flex-row md:pt-36 md:pb-28 md:pl-10 kesem-bg"
           style={{
             backgroundImage:
-              "linear-gradient(to right, rgba(1, 55, 75, 1) 0% , rgba(1, 55, 75, 0.7) 50%, rgba(1, 55, 75, 0.3)), url('/images/kesem-group.png')",
+              "linear-gradient(to right, rgba(1, 55, 75, 1) 0% , rgba(1, 55, 75, 0.7) 50%, rgba(1, 55, 75, 0.3)), url('/images/kesem-group-2025.jpeg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
