@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${baseUrl}/images/chedda.jpeg`,
+        url: `${baseUrl}/images/chedda.png`,
         width: 1200,
         height: 630,
         alt: "Kesem Photo",
