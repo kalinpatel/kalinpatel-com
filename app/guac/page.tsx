@@ -57,12 +57,7 @@ export default function KesemPage() {
             </p>
             <p className="text-sm mb-4">
               If you would like to donate via check or donor-advised fund, please{" "}
-              <a
-                href={`/contact?for=${encodeURIComponent(
-                  "Camp Kesem - Alternate Donation Method"
-                )}&note=${encodeURIComponent("Guac Page Hero")}`}
-                className="text-white underline"
-              >
+              <a href={`mailto:hello@kalinpatel.com`} className="text-white underline">
                 let me know
               </a>
               .
@@ -97,11 +92,7 @@ export default function KesemPage() {
                       About
                     </a>{" "}
                     |{" "}
-                    <a
-                      href={`/contact?note=${encodeURIComponent("From Guac Page About Me")}`}
-                      target="_blank"
-                      className="text-indigo-900 underline"
-                    >
+                    <a href={`mailto:hello@kalinpatel.com`} target="_blank" className="text-indigo-900 underline">
                       Contact
                     </a>
                   </p>
@@ -208,12 +199,7 @@ export default function KesemPage() {
               <DonationButton />
               <p className="text-sm mt-4">
                 If you would like to donate via check or donor-advised fund, please{" "}
-                <a
-                  href={`/contact?for=${encodeURIComponent(
-                    "Camp Kesem - Alternate Donation Method"
-                  )}&note=${encodeURIComponent("Guac Page Sidebar")}`}
-                  className="text-black underline"
-                >
+                <a href={`mailto:hello@kalinpatel.com`} className="text-black underline">
                   let me know
                 </a>
                 .
@@ -240,12 +226,7 @@ export default function KesemPage() {
             <DonationButton />
             <p className="text-sm mt-4">
               If you would like to donate via check or donor-advised fund, please{" "}
-              <a
-                href={`/contact?for=${encodeURIComponent(
-                  "Camp Kesem - Alternate Donation Method"
-                )}&note=${encodeURIComponent("Guac Page Bottom")}`}
-                className="text-white underline"
-              >
+              <a href={`mailto:hello@kalinpatel.com`} className="text-white underline">
                 let me know
               </a>
               .
@@ -277,12 +258,7 @@ export default function KesemPage() {
               </p>
               <p className="text-gray-700 mb-4">
                 If you have any questions, feel free to{" "}
-                <a
-                  href={`/contact?for=${encodeURIComponent("Camp Kesem - Matching Gifts")}&note=${encodeURIComponent(
-                    "Guac Page Matching Gifts Section"
-                  )}`}
-                  className="text-indigo-900 underline"
-                >
+                <a href={`mailto:hello@kalinpatel.com`} className="text-indigo-900 underline">
                   let me know
                 </a>
                 .

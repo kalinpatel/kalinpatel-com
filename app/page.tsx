@@ -124,11 +124,11 @@ export default function Page() {
                     title="University of Illinois Urbana–Champaign"
                     description={[
                       <p className="font-semibold" key="degree">
-                        B.S. Computer Science, Minor in Business
+                        B.S. Computer Science, Minors in Business and Informatics
                       </p>,
                       "GPA: 3.9/4.0",
                       "James Scholar Honors Program",
-                      "Dean's List (Fall 2024)",
+                      "Dean's List (Fall 2024, Spring 2025)",
                       "We CU Community Engaged Scholar Award",
                     ]}
                     dates="2024–2027"
@@ -141,78 +141,58 @@ export default function Page() {
                   I am currently working on a few projects that are not yet published. Stay tuned for updates!
                 </p>
                 <ProjectsOverview
-                  projects={[
-                    {
-                      name: "PrairiePlus",
-                      description: "A browser extension that makes PrairieLearn a little bit better.",
-                      image: "/site-images/prairie-plus-card.png",
-                      pageUrl: "/prairie-plus",
-                      github: {
-                        url: "https://github.com/kalinpatel/PrairiePlus",
-                        repoTitle: "kalinpatel/PrairiePlus",
-                      },
-                    },
-                  ]}
+                  projects={
+                    [
+                      // {
+                      //   name: "PrairiePlus",
+                      //   description: "A browser extension that makes PrairieLearn a little bit better.",
+                      //   image: "/site-images/prairie-plus-card.png",
+                      //   pageUrl: "/prairie-plus",
+                      //   github: {
+                      //     url: "https://github.com/kalinpatel/PrairiePlus",
+                      //     repoTitle: "kalinpatel/PrairiePlus",
+                      //   },
+                      // },
+                    ]
+                  }
                 />
               </div>
               <div className="mb-10" id="experience">
                 <h2 className="text-3xl font-bold mb-2">Experience</h2>
                 <div>
+                  <ResumeItem title="Digital Technology Intern" subtitle="United Airlines" dates="Incoming, May 2026" />
                   <ResumeItem
-                    title="Software Engineer Intern"
+                    title="Software Engineering Intern"
                     subtitle="AbbVie"
-                    dates="May 2025 – Present"
+                    dates="May 2025 – August 2025"
                     description={[
-                      "Supporting development of internal software tools, including a custom LLM interface for healthcare providers and marketers",
-                      "Helping streamline digital content approval processes through AI integration",
+                      "Developed internal AI agent to accelerate approval workflows for 3,500+ digital content projects annually, integrating a custom Retrieval-Augmented Generation model and automating key actions",
+                      "Migrated backend infrastructure to Kubernetes and Amazon ECS, improving scalability and compliance",
+                      "Architected enterprise-compliant application architecture plan in collaboration with governance teams",
+                      "Built automated website test pipelines within an Agile team to validate functionality and regulatory compliance of all US Commercial digital assets pre-launch for 52+ key brands across multiple platforms",
+                      "Collaborated cross-functionally on rapid deployment of extensible APIs and documentation to support AI content generation and marketing analytics for long-term scalability",
                     ]}
                   />
                   <ResumeItem
                     title="Technical Operations Lead"
                     subtitle="The Golf Practice"
-                    dates="December 2024 – May 2025"
+                    dates="Sep 2024 – May 2025"
                     description={[
-                      "Led the end-to-end implementation of a new booking system, including development in PHP, HTML/CSS/JS, and integrating partner APIs, to process 600+ bookings/month and 11k clients",
-                      "Managed website updates, facility technology, and PBX phone system across multiple locations",
-                      "Designed user-friendly wireframes, graphics, and custom email templates",
+                      "Led end-to-end implementation of a modern booking system, developing in PHP, HTML/CSS/JS and integrating new partner APIs to handle 600+ monthly reservations across 11,600+ client accounts",
+                      "Managed continuous website updates and facility technology infrastructure to ensure high availability and streamlined scheduling across multiple locations",
+                      "Designed wireframes, graphics, and email templates to improve user experience and engagement",
                     ]}
                   />
                   <ResumeItem
                     title="User Experience and Digital Engineering Intern"
-                    subtitle="Inspire Brands"
-                    dates="December 2021 – March 2022"
+                    subtitle="Inspire Brands – Buffalo Wild Wings"
+                    dates="Dec 2021 – Mar 2022"
                     description={[
-                      "Collaborated with digital marketing and product management teams to analyze the UX/UI and improve the Next.js website for customer-facing ordering for all Buffalo Wild Wings restaurants",
-                      "Designed and executed manual and automated tests to identify customer acquisition flow and online ordering issues before rollout",
-                      "Presented reports of customer experience issues to engineering and marketing leads",
+                      "Collaborated with digital marketing and product teams to analyze UX/UI and improve the Next.js customer-facing ordering site for all Buffalo Wild Wings restaurants",
+                      "Designed and executed usability tests to identify customer acquisition flow and online ordering issues",
+                      "Presented findings and recommendations to engineering and marketing leads to drive product improvements",
                     ]}
                   />
-                  <details className="mt-6 border-2 border-gray-200 rounded-lg">
-                    <summary className="px-4 py-2.5 bg-gray-50 font-medium cursor-pointer hover:bg-gray-100 rounded-lg">
-                      Additional Experiences
-                    </summary>
-                    <div className="p-4">
-                      <ResumeItem
-                        title="Program Lead"
-                        subtitle="The Golf Practice"
-                        dates="April 2024 – August 2024"
-                        description={[
-                          "Created innovative curriculum and advertising campaigns that contributed to $40K+ in new revenue and 35% more enrollments for a new location",
-                          "Managed TrackMan technology, installed new radar units, led implementation of new software, documented technical workflow, and trained all staff",
-                          "Oversaw 15 staff to maintain a collaborative environment and provided daily feedback to foster continuous improvements",
-                        ]}
-                      />
-                      <ResumeItem
-                        title="Golf Coach"
-                        subtitle="The Golf Practice"
-                        dates="May 2021 – March 2024"
-                        description={[
-                          "Taught individual lessons and led group classes for 20+ junior golfers",
-                          "Created curriculum training documents to consistently and efficiently train new staff and ensure proper instruction that met required standards from senior coaching staff",
-                        ]}
-                      />
-                    </div>
-                  </details>
                 </div>
               </div>
               <div className="mb-10" id="contact">
@@ -220,7 +200,7 @@ export default function Page() {
                 <p className="text-gray-700 mt-8">
                   {/* link/button to /contact */}
                   <Link
-                    href="/contact"
+                    href="mailto:hello@kalinpatel.com"
                     className="inline-block px-6 py-2 bg-indigo-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-600 transition"
                   >
                     Get in Touch
