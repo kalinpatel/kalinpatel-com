@@ -81,6 +81,10 @@ export default function KesemPage() {
                 />
                 <div>
                   <h2 className="text-4xl font-bold text-indigo-900">Kalin "Guac" Patel</h2>
+                  <p className="text-sm text-gray-600 mb-2 italic">
+                    At camp, I go by "Guac". Kesem Names started as a Camp Kesem tradition to help our campers express
+                    themselves and to be an added layer of escape from what's going on at home.
+                  </p>
                   <p className="text-base text-gray-700">Kesem at University of Illinois</p>
                   <p className="text-base text-gray-700">Co-Director</p>
                   <p className="text-base text-gray-700">
