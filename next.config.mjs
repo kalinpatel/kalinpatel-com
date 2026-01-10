@@ -8,12 +8,6 @@ const nextConfig = {
         destination: "/guac",
         permanent: true,
       },
-      {
-        // short links
-        source: "/go/:slug",
-        destination: "https://link.kalinpatel.com/:slug",
-        permanent: true,
-      },
     ];
   },
   webpack(config, { isServer }) {
